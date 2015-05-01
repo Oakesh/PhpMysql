@@ -1,0 +1,14 @@
+<?php
+        echo '<select name="fromYear"' ;
+        $starting_year = date('Y' , strtotime('-10 year')) ;
+        $ending_year = date('Y' , strtotime('+10 year')) ;
+        $current_year = date('Y') ;
+        for ( $starting_year ; $starting_year <= $ending_year ; $starting_year++ ) {
+            echo '<option value="' . $starting_year . '"' ;
+            if ( $starting_year == $current_year ) {
+                echo ' selected="selected"' ;
+            }
+            echo ' >' . $starting_year . '</option>' ;
+        }
+        echo '<select>' ;
+?>
